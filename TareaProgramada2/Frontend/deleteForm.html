@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Estilos para los botones */
+    .delete-button {
+      background-color: #FF3333; /* Color de fondo rojo */
+      color: white; /* Texto en blanco */
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .delete-button:hover {
+      background-color: #FF0000; /* Color de fondo rojo más oscuro al hacer hover */
+    }
+
+    /* Estilos para el botón de cerrar */
+    .close-button {
+      background-color: #333333; /* Color de fondo gris oscuro */
+      color: white; /* Texto en blanco */
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .close-button:hover {
+      background-color: #000000; /* Color de fondo negro al hacer hover */
+    }
+  </style>
+  <title>Formulario de Eliminación</title>
+</head>
+<body>
+  <div class="form-container">
+    <h1>Formulario de Eliminación</h1>
+    <form action="/eliminar-articulo" method="POST">
+      <label for="codigo">Código del Artículo a Borrar:</label>
+      <input type="text" id="codigo" name="codigo" required>
+      <!-- Puedes agregar más campos según tus necesidades -->
+      <button type="submit" class="delete-button">Borrar</button>
+    </form>
+    <div class="buttons">
+      <a href="./list.html">
+        <button class="close-button">Cerrar</button>
+      </a>
+    </div>
+  </div>
+</body>
+</html>

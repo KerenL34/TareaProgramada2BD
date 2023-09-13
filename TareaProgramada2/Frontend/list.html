@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <style>
+    /* Estilos generales */
+    body {
+      background-color: #1a1a1a; /* Fondo negro */
+      color: #ffffff; /* Texto en blanco */
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 80%;
+      text-align: center;
+      padding: 20px;
+      border: 2px solid #ffffff;
+      border-radius: 10px;
+      background-color: rgba(46, 46, 46, 0.733);
+      box-shadow: 0 0 10px #5a5a5a;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    /* Estilos para la tabla de datos */
+    table.data-table {
+      width: 100%;
+      margin-top: 20px;
+      max-height: 300px;
+      border-collapse: collapse;
+      overflow-y: auto;
+      border: 2px solid #ffffff;
+      border-radius: 10px;
+      background-color: #ffffff;
+      color: #000000;
+    }
+
+    table.data-table th {
+      background-color: #3333FF; /* Fondo azul */
+      color: #ffffff; /* Texto blanco */
+      padding: 10px;
+    }
+
+    table.data-table td {
+      border: 1px solid #ffffff;
+      padding: 10px;
+    }
+
+    /* Estilos para los botones de acción */
+    .action-buttons {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    .action-button {
+      width: 150px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #3333FF; /* Fondo azul */
+      color: #ffffff; /* Texto blanco */
+      border: none;
+      border-radius: 10px;
+      margin: 0 10px;
+      cursor: pointer;
+    }
+
+    .action-button:hover {
+      background-color: #0000FF; /* Color de fondo azul más oscuro al hacer hover */
+    }
+
+    /* Estilos para los botones de filtrado */
+    .filter-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    .filter-box {
+      width: 30%;
+      padding: 10px;
+      text-align: left;
+      border: 2px solid #ffffff;
+      border-radius: 10px;
+      background-color: rgba(46, 46, 46, 0.733);
+    }
+
+    .filter-input {
+      width: 70%;
+      padding: 5px;
+      font-size: 14px;
+      color: #000000; /* Texto negro */
+      background-color: #ffffff; /* Fondo blanco */
+    }
+
+    .filter-button {
+      width: 25%;
+      padding: 10px 20px;
+      font-size: 14px;
+      background-color: #3333FF; /* Fondo azul */
+      color: #ffffff; /* Texto blanco */
+      border: none;
+      border-radius: 5px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+
+    .filter-button:hover {
+      background-color: #0000FF; /* Color de fondo azul más oscuro al hacer hover */
+    }
+  </style>
+  <title>Ferretería</title>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Ferretería</h1>
+
+    <!-- Tabla de datos de productos (debes llenarla con los datos de tu base de datos) -->
+    <table class="data-table">
+      <tr>
+        <th>Código</th>
+        <th>Nombre</th>
+        <th>Precio</th>
+      </tr>
+      <!-- Agrega más filas aquí con los datos de tus productos -->
+      <tr>
+        <td>001</td>
+        <td>Llave inglesa</td>
+        <td>15.99</td>
+      </tr>
+      <tr>
+        <td>002</td>
+        <td>Tornillo</td>
+        <td>1.25</td>
+      </tr>
+      <!-- Agrega más filas según tus datos -->
+    </table>
+
+    <div class="filter-container">
+      <div class="filter-box">
+        <input type="text" id="nombreFilter" class="filter-input" placeholder="Filtrar por nombre">
+        <button class="filter-button" onclick="filtrarPorNombre()">Filtrar</button>
+      </div>
+
+      <div class="filter-box">
+        <input type="number" id="cantidadFilter" class="filter-input" placeholder="Filtrar por cantidad">
+        <button class="filter-button" onclick="filtrarPorCantidad()">Filtrar</button>
+      </div>
+
+      <div class="filter-box">
+        <!-- Agrega aquí la lista de clases de artículo -->
+        <select id="claseFilter" class="filter-input">
+          <option value="clase1">Clase 1</option>
+          <option value="clase2">Clase 2</option>
+          <option value="clase3">Clase 3</option>
+        </select>
+        <button class="filter-button" onclick="filtrarPorClase()">Filtrar</button>
+      </div>
+    </div>
+
+    <div class="action-buttons">
+      <!-- Botones de acción -->
+      <a href="./insertForm.html" rel="noopener noreferrer">
+        <button class="action-button" style="background-color: #3333FF; color: #ffffff;">Insertar</button>
+      </a>
+      <a href="./updateForm.html" rel="noopener noreferrer">
+        <button class="action-button" style="background-color: #3333FF; color: #ffffff;">Actualizar</button>
+      </a>
+      <a href="./deleteForm.html" rel="noopener noreferrer">
+        <button class="action-button" style="background-color: #3333FF; color: #ffffff;">Borrar</button>
+      </a>
+    </div>
+
+    
+    <button id="cerrarButton" class="action-button" style="background-color: #FF3333; color: #ffffff;">Cerrar</button>
+  </div>
+
+  <script>
+    // Función para filtrar por nombre
+    function filtrarPorNombre() {
+      const filtroNombre = document.getElementById("nombreFilter").value.toLowerCase();
+      // Implementa la lógica de filtrado por nombre aquí
+    }
+
+    // Función para filtrar por cantidad
+    function filtrarPorCantidad() {
+      const filtroCantidad = parseInt(document.getElementById("cantidadFilter").value);
+      // Implementa la lógica de filtrado por cantidad aquí
+    }
+
+    // Función para filtrar por clase de artículo
+    function filtrarPorClase() {
+      const selectedClase = document.getElementById("claseFilter").value;
+      // Implementa la lógica de filtrado por clase de artículo aquí
+    }
+
+    // Agregar evento para cerrar la ventana
+    document.getElementById("cerrarButton").addEventListener("click", function () {
+      window.close(); // Cierra la ventana actual
+    });
+  </script>
+</body>
+
+</html>

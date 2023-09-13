@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      background-color: black; /* Fondo negro */
+      color: white; /* Texto en blanco */
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      text-align: center;
+      padding: 20px;
+      border: 2px solid white;
+      border-radius: 10px;
+      background-color: black; /* Fondo negro */
+      box-shadow: 0 0 10px blue; /* Sombra azul */
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    form {
+      max-width: 300px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: blue; /* Fondo azul */
+      border-radius: 8px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      color: white; /* Texto en blanco */
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 5px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 4px;
+      background-color: white; /* Fondo blanco */
+      color: black; /* Texto en negro */
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: white; /* Fondo blanco */
+      color: blue; /* Texto en azul */
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: blue; /* Fondo azul al hacer hover */
+      color: white; /* Texto en blanco al hacer hover */
+    }
+
+    .buttons {
+      margin-top: 20px;
+    }
+
+    .login-button {
+      width: 100%;
+      padding: 10px;
+      background-color: white; /* Fondo blanco */
+      color: blue; /* Texto en azul */
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .insert-button:hover {
+      background-color: blue; /* Fondo azul al hacer hover */
+      color: white; /* Texto en blanco al hacer hover */
+    }
+  </style>
+  <title>Iniciar Sesión</title>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Iniciar Sesión</h1>
+    <form>
+      <label for="username">Usuario:</label>
+      <input type="text" id="username" name="username" required>
+
+      <label for="password">Contraseña:</label>
+      <input type="password" id="password" name="password" required>
+
+      <div class="buttons">
+        <button type = "submit" login-button">Iniciar Sesión</button>
+
+      </div>
+    </form>
+  </div>
+</body>
+
+</html>

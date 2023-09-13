@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Estilos para los botones */
+    .update-button {
+      background-color: #33CC33; /* Color de fondo verde */
+      color: white; /* Texto en blanco */
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .update-button:hover {
+      background-color: #009900; /* Color de fondo verde más oscuro al hacer hover */
+    }
+
+    /* Estilos para el botón de cerrar */
+    .close-button {
+      background-color: #333333; /* Color de fondo gris oscuro */
+      color: white; /* Texto en blanco */
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .close-button:hover {
+      background-color: #000000; /* Color de fondo negro al hacer hover */
+    }
+  </style>
+  <title>Formulario de Actualización</title> <!-- Cambio de título -->
+</head>
+<body>
+  <div class="form-container">
+    <h1>Formulario de Actualización</h1> <!-- Cambio de título -->
+    <form id="update-form"> <!-- Cambio de ID -->
+      <label for="codigo">Código del Artículo a Actualizar:</label> <!-- Agregado campo para código -->
+      <input type="text" id="codigo" name="codigo" required>
+      <label for="nombre">Nuevo Nombre:</label> <!-- Agregado campo para nombre actualizado -->
+      <input type="text" id="nombre" name="nombre" required>
+      <label for="precio">Nuevo Precio:</label> <!-- Agregado campo para precio actualizado -->
+      <input type="number" id="precio" name="precio" required>
+      <button type="submit" class="update-button">Actualizar</button> <!-- Cambio de clase y texto del botón -->
+    </form>
+    <div class="buttons">
+      <a href="./list.html">
+        <button class="close-button">Cerrar</button> <!-- Cambio de clase y texto del botón -->
+      </a>
+    </div>
+  </div>
+</body>
+</html>
